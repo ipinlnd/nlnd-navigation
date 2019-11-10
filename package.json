@@ -1,5 +1,5 @@
 {
-    "name": "nlnd_navigation",
+    "name": "nlnd-navigation",
     "description": "A view-manager for react-native to act as the navigation system",
     "author": "Ali Rezaee (ipinlnd) <nlndipi@hotmail.com>",
     "version": "0.1.0",
@@ -19,5 +19,14 @@
         "navigation",
         "view-manager"
     ],
-    "main": "index.tsx"
+    "main": "index.tsx",
+    "bugs": {
+        "url": "https://github.com/ipinlnd/nlnd-navigation/issues"
+    },
+    "homepage": "https://github.com/ipinlnd/nlnd-navigation#readme",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ipinlnd/nlnd-navigation.git"
+    }
 }
