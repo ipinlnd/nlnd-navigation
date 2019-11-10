@@ -78,7 +78,7 @@ This will route from root, to homestack, to page2stack and finally to the page2 
 | navigateFromRoot(stacks[], key, props) | Will route to the given key, starting from the root stack and moving along the stacks array. |
 
 ### Preview
-![Preview](navigation.gif | width=100)
+<img src="navigation.gif" width="300" />
 
 ### Authors
 
