@@ -4,6 +4,20 @@ This is a simple view-manager for react-native that get's a group of routes and 
 
 This module does not provide any sort of UI navigation components like Tab navigations or Drawer navigations. It only provides the basic system where you can use the navigation functions to do what you want.
 
+### installation
+
+just do
+
+```
+npm install nlnd-navigation
+```
+
+or
+
+```
+yarn add nlnd-navigation
+```
+
 ### Sample
 
 This is a simple example to see how it works:
@@ -66,18 +80,19 @@ This will route from root, to homestack, to page2stack and finally to the page2 
 
 ### Refrences
 
-| Function                               | Return type                                                                                  | Description                                                       |
-| -------------------------------------- | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| getStacks()                            | string                                                                                       | Will return a comma seperated list of all stacks                  |
-| getRoutes()                            | string                                                                                       | Will return a comma seperated list of all routes                  |
-| getCurrentStack()                      | string                                                                                       | Will return the name of the current stack                         |
-| getCurrentRoute()                      | string                                                                                       | Will return the name of the current route                         |
-| goBack()                               | boolean                                                                                      | Goes back to the previous route. returns false on failure.        |
-| goHome()                               | boolean                                                                                      | Goes to the initial route of the stack. returns false on failure. |
-| navigate(key, props)                   | boolean                                                                                      | Will navigate to the given route, inside the stack.               |
-| navigateFromRoot(stacks[], key, props) | Will route to the given key, starting from the root stack and moving along the stacks array. |
+| Function                               | Return type | Description                                                                                  |
+| -------------------------------------- | ----------- | -------------------------------------------------------------------------------------------- |
+| getStacks()                            | string      | Will return a comma seperated list of all stacks                                             |
+| getRoutes()                            | string      | Will return a comma seperated list of all routes                                             |
+| getCurrentStack()                      | string      | Will return the name of the current stack                                                    |
+| getCurrentRoute()                      | string      | Will return the name of the current route                                                    |
+| goBack()                               | boolean     | Goes back to the previous route. returns false on failure.                                   |
+| goHome()                               | boolean     | Goes to the initial route of the stack. returns false on failure.                            |
+| navigate(key, props)                   | boolean     | Will navigate to the given route, inside the stack.                                          |
+| navigateFromRoot(stacks[], key, props) | boolean     | Will route to the given key, starting from the root stack and moving along the stacks array. |
 
 ### Preview
+
 <img src="navigation.gif" width="300" />
 
 ### Authors
