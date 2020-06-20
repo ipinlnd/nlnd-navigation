@@ -61,7 +61,7 @@ class NlndNavigation extends Component<Props, State> {
     const route: Route = {
       key: props.key,
       route: props.route,
-      parentStack: stack
+      parentStack: stack,
     };
 
     return route;
@@ -69,17 +69,17 @@ class NlndNavigation extends Component<Props, State> {
 
   getStack = (props: StackProp, parentStack?: Stack) => {
     const stack: Stack = {
-      name: props.name
+      name: props.name,
     };
 
     if (props.routes) {
-      stack.routes = props.routes!.map(item => this.getRoute(item, stack));
+      stack.routes = props.routes!.map((item) => this.getRoute(item, stack));
       stack.initial = stack.routes.filter(
-        item => item.key === props.initialRoute
+        (item) => item.key === props.initialRoute,
       )[0];
     }
     if (props.stacks) {
-      stack.stacks = props.stacks!.map(item => this.getStack(item, stack));
+      stack.stacks = props.stacks!.map((item) => this.getStack(item, stack));
     }
     stack.parentStack = parentStack;
 
@@ -94,7 +94,7 @@ class NlndNavigation extends Component<Props, State> {
       return stack.name;
     }
 
-    return stack.stacks.map(item => this.getStacks(item)).join(",");
+    return stack.stacks.map((item) => this.getStacks(item)).join(",");
   };
 
   getRoutes = (stack: Stack): string => {
@@ -102,10 +102,10 @@ class NlndNavigation extends Component<Props, State> {
     names.push(stack);
 
     if (!stack.stacks) {
-      return stack.routes!.map(item => item.key).join(",");
+      return stack.routes!.map((item) => item.key).join(",");
     }
 
-    return stack.stacks.map(item => this.getRoutes(item)).join(",");
+    return stack.stacks.map((item) => this.getRoutes(item)).join(",");
   };
 
   goBack = () => {
@@ -128,7 +128,7 @@ class NlndNavigation extends Component<Props, State> {
 
   navigate = (route: string, props: any) => {
     const routes = this.state.currentStack.routes!.filter(
-      item => item.key === route
+      (item) => item.key === route,
     );
 
     if (routes.length === 1) {
@@ -146,7 +146,7 @@ class NlndNavigation extends Component<Props, State> {
     for (let i in stacks) {
       if (currentStack.name === stacks[Number(i)]) {
         if (currentStack.routes) {
-          const route = currentStack.routes!.filter(item => item.key === key);
+          const route = currentStack.routes!.filter((item) => item.key === key);
           if (route.length === 1) {
             const currentRoute = route[0];
             currentRoute.previousRoute = this.state.currentRoute;
@@ -154,14 +154,14 @@ class NlndNavigation extends Component<Props, State> {
             this.setState({
               currentRoute,
               currentStack,
-              currentProps: props
+              currentProps: props,
             });
             return true;
           }
         }
       }
       const st = currentStack.stacks!.filter(
-        s => s.name === stacks[Number(i) + 1]
+        (s) => s.name === stacks[Number(i) + 1],
       );
       if (st.length === 1) {
         currentStack = st[0];
@@ -181,11 +181,11 @@ class NlndNavigation extends Component<Props, State> {
     if (!props.stack.routes || props.stack.routes.length === 0) {
       if (!props.stack.initialStack) {
         throw new Error(
-          "Your current stack, has not routes installed. Please provide 'initialStack' parameter to get the initial routes from"
+          "Your current stack, has not routes installed. Please provide 'initialStack' parameter to get the initial routes from",
         );
       }
       initialStack = rootStack.stacks!.filter(
-        item => item.name === props.stack.initialStack
+        (item) => item.name === props.stack.initialStack,
       )[0];
     }
 
@@ -200,7 +200,7 @@ class NlndNavigation extends Component<Props, State> {
       goBack: this.goBack,
       goHome: this.goHome,
       navigate: this.navigate,
-      navigateFromRoot: this.navigateFromRoot
+      navigateFromRoot: this.navigateFromRoot,
     };
 
     BackHandler.addEventListener("hardwareBackPress", () => {
@@ -218,17 +218,15 @@ class NlndNavigation extends Component<Props, State> {
     this.state = {
       currentStack: initialStack,
       currentRoute: this.navigation.initialRoute,
-      currentProps: null
+      currentProps: null,
     };
   }
 
   render = () => {
+    const Comp = this.state.currentRoute.route;
     return (
       <View style={this.props.style}>
-        <this.state.currentRoute.route
-          {...this.state.currentProps}
-          navigation={this.navigation}
-        />
+        <Comp {...this.state.currentProps} navigation={this.navigation} />
       </View>
     );
   };
@@ -238,4 +236,4 @@ interface NlndNavigationProps {
   navigation: Navigation;
 }
 
-export { NlndNavigation, NlndNavigationProps };
+export { NlndNavigation, NlndNavigationProps, Stack as NavigationStack };

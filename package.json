@@ -2,7 +2,7 @@
   "name": "nlnd-navigation",
   "description": "A view-manager for react-native to act as the navigation system",
   "author": "Ali Rezaee (ipinlnd) <nlndipi@hotmail.com>",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "dependencies": {
     "react": "16.11.0",
     "react-native": "0.62.2"
