@@ -52,6 +52,7 @@ interface Route {
   route: () => JSX.Element;
   parentStack: Stack;
   previousRoute?: Route;
+  previousProps?: any;
 }
 
 class NlndNavigation extends Component<Props, State> {
@@ -111,7 +112,12 @@ class NlndNavigation extends Component<Props, State> {
   goBack = () => {
     if (this.state.currentRoute.previousRoute) {
       const prev = this.state.currentRoute.previousRoute;
-      this.setState({ currentRoute: prev, currentStack: prev.parentStack });
+      const prevProps = this.state.currentRoute.previousProps;
+      this.setState({
+        currentRoute: prev,
+        currentStack: prev.parentStack,
+        currentProps: prevProps,
+      });
       return true;
     }
 
@@ -134,6 +140,7 @@ class NlndNavigation extends Component<Props, State> {
     if (routes.length === 1) {
       const currentRoute = routes[0];
       currentRoute.previousRoute = this.state.currentRoute;
+      currentRoute.previousProps = this.state.currentProps;
       this.setState({ currentRoute, currentProps: props });
       return true;
     }
@@ -150,7 +157,7 @@ class NlndNavigation extends Component<Props, State> {
           if (route.length === 1) {
             const currentRoute = route[0];
             currentRoute.previousRoute = this.state.currentRoute;
-
+            currentRoute.previousProps = this.state.currentProps;
             this.setState({
               currentRoute,
               currentStack,
