@@ -1,32 +1,32 @@
 {
-    "name": "nlnd-navigation",
-    "description": "A view-manager for react-native to act as the navigation system",
-    "author": "Ali Rezaee (ipinlnd) <nlndipi@hotmail.com>",
-    "version": "0.1.1",
-    "dependencies": {
-        "react": "16.9.0",
-        "react-native": "0.61.4"
-    },
-    "devDependencies": {
-        "@react-native-community/eslint-config": "^0.0.5",
-        "@types/react-native": "^0.60.22",
-        "metro-react-native-babel-preset": "^0.56.0",
-        "typescript": "^3.6.3"
-    },
-    "keywords": [
-        "react-native",
-        "react",
-        "navigation",
-        "view-manager"
-    ],
-    "main": "index.tsx",
-    "bugs": {
-        "url": "https://github.com/ipinlnd/nlnd-navigation/issues"
-    },
-    "homepage": "https://github.com/ipinlnd/nlnd-navigation#readme",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/ipinlnd/nlnd-navigation.git"
-    }
+  "name": "nlnd-navigation",
+  "description": "A view-manager for react-native to act as the navigation system",
+  "author": "Ali Rezaee (ipinlnd) <nlndipi@hotmail.com>",
+  "version": "0.1.2",
+  "dependencies": {
+    "react": "16.11.0",
+    "react-native": "0.62.2"
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@types/react-native": "^0.62.0",
+    "metro-react-native-babel-preset": "^0.56.0",
+    "typescript": "^3.8.3"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "navigation",
+    "view-manager"
+  ],
+  "main": "index.tsx",
+  "bugs": {
+    "url": "https://github.com/ipinlnd/nlnd-navigation/issues"
+  },
+  "homepage": "https://github.com/ipinlnd/nlnd-navigation#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ipinlnd/nlnd-navigation.git"
+  }
 }
